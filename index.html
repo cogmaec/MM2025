@@ -345,13 +345,22 @@
             // 高亮当前部分
             let current = '';
             
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= sectionTop - 150) {
-                    current = section.getAttribute('id');
-                }
-            });
+            const scrollPosition = window.pageYOffset + window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            const bottomThreshold = 100; // 距离底部100px就算到底部
+
+            // 如果接近底部，直接高亮contact
+            if (documentHeight - scrollPosition < bottomThreshold) {
+                current = 'contact';
+            } else {
+                // 否则正常检测各个section
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 150) {
+                        current = section.getAttribute('id');
+                    }
+                });
+            }
 
             navItems.forEach(item => {
                 item.classList.remove('active');
