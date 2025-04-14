@@ -7,6 +7,131 @@
     <link rel="icon" type="image/x-icon" href="assets/logo.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --accent-color: #007bff;
+            --theme-color: #c41230;
+        }
+        
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(232, 241, 255, 0.85), rgba(232, 241, 255, 0.85)), url('assets/fig2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero h1 {
+            color: #c0392b;
+        }
+
+        .hero .subtitle {
+            color: #e74c3c;
+        }
+
+        .hero .conference-info {
+            color: #666;
+        }
+
+        .hero .description {
+            color: #444;
+        }
+
+        .hero .description p {
+            color: #444;
+        }
+
+        .hero .stay-updated {
+            color: rgba(0, 0, 0, 0.8);
+        }
+
+        .hero .stay-updated a {
+            color: #e74c3c;
+            text-decoration: none;
+        }
+
+        .hero .stay-updated a:hover {
+            color: #c0392b;
+        }
+
+        .hero .button {
+            background-color: #c0392b;
+            color: white;
+        }
+
+        .hero .button:hover {
+            background-color: #a93226;
+        }
+
+        .accent-text {
+            color: var(--accent-color) !important;
+        }
+        
+        .theme-link {
+            color: var(--theme-color) !important;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-link:hover {
+            text-decoration: underline;
+        }
+
+        .submission-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            border: 2px solid var(--accent-color);
+            border-radius: 5px;
+            text-decoration: none;
+            color: var(--theme-color) !important;
+            background-color: #e8f1ff;
+            transition: all 0.3s ease;
+        }
+
+        .submission-button:hover {
+            background-color: #d9e8ff;
+            text-decoration: none !important;
+        }
+
+        .submission-button .fa-paper-plane {
+            color: var(--theme-color);
+        }
+
+        #submission a.theme-link {
+            color: var(--theme-color) !important;
+        }
+
+        .email-btn {
+            display: inline-block;
+            padding: 2px 10px;
+            font-size: 0.9em;
+            color: #666;
+            background-color: rgba(0, 0, 0, 0.05);
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .email-btn:hover {
+            background-color: rgba(0, 0, 0, 0.08);
+        }
+
+        .email-text {
+            display: none;
+            color: #444;
+            font-style: italic;
+            padding: 0 4px;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .email-text.revealed {
+            display: inline;
+        }
+    </style>
 </head>
 <body>
     <!-- <div class="background-container"></div> 新增背景容器 -->
@@ -30,7 +155,7 @@
                     <a href="#invited-speaker">Invited Speakers</a>
                     <a href="#organizers">Organizers</a>
                     <a href="#contact">Contact</a>
-                    <a href="https://openreview.net/group?id=acmmm.org/ACMMM/2025/Workshop/cogmeac" class="register-btn" target="_blank">Register</a>
+                    <a href="https://openreview.net/group?id=acmmm.org/ACMMM/2025/Workshop/CogMAEC" class="register-btn" target="_blank">Register</a>
                 </div>
             </div>
         </nav>
@@ -44,9 +169,8 @@
                     <p>27-31 October 2025 | Dublin, Ireland | <a href="https://acmmm2025.org/" target="_blank">ACM Multimedia 2025</a></p>
                 </div>
                 <div class="description">
-                    <p>While multimodal systems excel at basic emotion recognition, they struggle to understand why we feel and how emotions evolve. This workshop pioneers cognitive AI that interprets human affect through multimodal context and causal reasoning.</p>
-                    
-                    <p>Join us in redefining emotional intelligence for healthcare robots, empathetic chatbots, and beyond.</p>
+                    <p>While multimodal systems excel at basic emotion recognition, they struggle to understand why we feel and how emotions evolve. This workshop pioneers cognitive AI that interprets human affect through multimodal context and causal reasoning.
+                    Join us in redefining emotional intelligence for healthcare robots, empathetic chatbots, and beyond.</p>
                     
                     <p class="stay-updated">Stay updated: <a href="https://CogMAEC.github.io/MM2025" target="_blank">https://CogMAEC.github.io/MM2025</a></p>
                 </div>
@@ -60,7 +184,7 @@
                 <div class="about-content">
                     <p class="welcome-text">Welcome to the 1st CogMAEC Workshop, proudly co-located with <a href="https://acmmm2025.org/" target="_blank">ACM Multimedia 2025</a>!</p>
                     
-                    <p>As human-computer interaction evolves, emotional intelligence and empathy are becoming essential capabilities of intelligent systems. The CogMAEC Workshop (<em>Cognition-oriented Multimodal Affective and Empathetic Computing</em>) aims to push the boundaries of traditional affective computing by exploring the next frontier: <strong>cognitive emotional understanding</strong>.</p>
+                    <p>As human-computer interaction evolves, emotional intelligence and empathy are becoming essential capabilities of intelligent systems. The CogMAEC Workshop (<em class="accent-text">Cognition-oriented Multimodal Affective and Empathetic Computing</em>) aims to push the boundaries of traditional affective computing by exploring the next frontier: <strong>cognitive emotional understanding</strong>.</p>
                     
                     <p>While previous work in multimodal affective computing has focused on recognizing basic emotions from facial expressions, speech, and text, this workshop sets its sights on deeper challenges — understanding the <strong>"why"</strong> behind emotions, reasoning over context, and simulating human-like empathetic responses. With the recent advances in <strong>Multimodal Large Language Models (MLLMs)</strong>, the time is ripe to rethink how machines perceive, reason, and respond to human emotions.</p>
                     
@@ -73,7 +197,7 @@
                     
                     <p>The workshop will cover both traditional multimodal emotion recognition techniques and cutting-edge cognition-driven methodologies. We aim to foster meaningful discussion and collaboration at the intersection of <strong>affective computing</strong>, <strong>cognitive modeling</strong>, and <strong>multimodal AI</strong>.</p>
                     
-                    <p class="highlight-text">Join us as we collectively reimagine what emotional AI can become — not just smarter, but more human.</p>
+                    <p class="highlight-text accent-text">Join us as we collectively reimagine what emotional AI can become — not just smarter, but more human.</p>
                     
                     <p class="note">All workshop details, schedules, and updates can be found on our <a href="https://CogMAEC.github.io/MM2025" target="_blank">website</a>.</p>
                 </div>
@@ -87,13 +211,13 @@
                 <h2>Call for Papers</h2>
                 <div class="about-content">
                     <p>We invite submissions to the workshop in the following three categories:</p>
-                    
+
                     <p><strong>1. Position or Perspective Papers</strong> (4 to 8 pages, excluding references): We encourage forward-looking contributions that present novel ideas, conceptual frameworks, research outlooks, or identify key challenges aligned with the workshop themes.</p>
-                    
+
                     <p><strong>2. Featured Papers</strong> (submission of title, abstract, and the original paper): We welcome impactful papers previously published at top-tier conferences or journals, or well-curated summaries that consolidate significant work relevant to the workshop's focus areas.</p>
-                    
+
                     <p><strong>3. Demonstration Papers</strong> (up to 2 pages, excluding references): We seek short papers introducing prototypes, tools, or systems—whether new or previously published—that showcase practical implementations or evaluation methodologies related to the workshop topics.</p>
-                    
+
                     <p>All accepted submissions will be included in the ACM MM proceedings. Authors of selected papers will be invited to present their work at the workshop.</p>
                     
                     <p>A <strong>Best Paper Award</strong> will be presented to an outstanding submission, with the winner announced during the event.</p>
@@ -102,55 +226,121 @@
                     
                     <p>The workshop welcomes submissions on the following topics (but not limited to):</p>
                     
-                    <p><strong>1) Traditional Multimodal Affective Computing</strong></p>
-                    <ul class="research-areas">
-                        <li>Facial Expression Recognition</li>
-                        <li>Speech Emotion Recognition</li>
-                        <li>Audio-visual Emotion Recognition</li>
-                        <li>Body Gesture Emotion Detection</li>
-                        <li>Micro-expression Recognition</li>
-                        <li>Multimodal Sentiment Analysis</li>
-                        <li>Multimodal Emotion Recognition in Conversation</li>
-                        <li>Multimodal Stance Detection</li>
-                        <li>Multimodal Emotion Analysis in Memes</li>
-                        <li>Multimodal Sarcasm and Irony Detection</li>
-                        <li>Cross-cultural Emotion Recognition</li>
-                        <li>Physiological Signal-based Emotion Recognition</li>
-                        <li>Emotion-aware Dialogue Generation</li>
-                        <li>Emotional Speech Synthesis</li>
-                        <li>Multimodal Affective Storytelling</li>
-                        <li>Affective Music Generation</li>
-                        <li>Affective Facial Animation</li>
-                        <li>Emotion-controlled Avatar Generation</li>
-                    </ul>
+                    <div class="research-areas-container">
+                        <div class="research-area-column">
+                            <p><strong>1) Traditional Multimodal Affective Computing</strong></p>
+                            <ul class="research-areas">
+                                <li>Facial Expression Recognition</li>
+                                <li>Speech Emotion Recognition</li>
+                                <li>Audio-visual Emotion Recognition</li>
+                                <li>Body Gesture Emotion Detection</li>
+                                <li>Micro-expression Recognition</li>
+                                <li>Multimodal Sentiment Analysis</li>
+                                <li>Multimodal Emotion Recognition in Conversation</li>
+                                <li>Multimodal Stance Detection</li>
+                                <li>Multimodal Emotion Analysis in Memes</li>
+                                <li>Multimodal Sarcasm and Irony Detection</li>
+                                <li>Cross-cultural Emotion Recognition</li>
+                                <li>Physiological Signal-based Emotion Recognition</li>
+                                <li>Emotion-aware Dialogue Generation</li>
+                                <li>Emotional Speech Synthesis</li>
+                                <li>Multimodal Affective Storytelling</li>
+                                <li>Affective Music Generation</li>
+                                <li>Affective Facial Animation</li>
+                                <li>Emotion-controlled Avatar Generation</li>
+                            </ul>
+                        </div>
 
-                    <p><strong>2) MLLM-based Multimodal Affective Computing</strong></p>
-                    <ul class="research-areas">
-                        <li>Few-shot Emotion Recognition</li>
-                        <li>Multimodal Emotion Reasoning</li>
-                        <li>Multimodal Affective Hallucination Mitigation</li>
-                        <li>Emotion-aware Self-supervised Representation Learning</li>
-                        <li>Multimodal Affective In-context Learning</li>
-                        <li>Affective Instruction Tuning for MLLMs</li>
-                        <li>Multimodal Feature Extraction and Fusion</li>
-                        <li>Cross-modal Affective Alignment</li>
-                        <li>Cross-domain Affective Transfer Learning</li>
-                        <li>Emotion-aware Visual Question Answering</li>
-                        <li>Emotion-guided Text-to-Image/Video Generation</li>
-                        <li>Multimodal Empathetic Dialogue Systems</li>
-                        <li>Persona-driven Emotion-aware Conversational AI</li>
-                    </ul>
+                        <div class="research-area-column">
+                            <p><strong>2) MLLM-based Multimodal Affective Computing</strong></p>
+                            <ul class="research-areas">
+                                <li>Few-shot Emotion Recognition</li>
+                                <li>Multimodal Emotion Reasoning</li>
+                                <li>Multimodal Affective Hallucination Mitigation</li>
+                                <li>Emotion-aware Self-supervised Representation Learning</li>
+                                <li>Multimodal Affective In-context Learning</li>
+                                <li>Affective Instruction Tuning for MLLMs</li>
+                                <li>Multimodal Feature Extraction and Fusion</li>
+                                <li>Cross-modal Affective Alignment</li>
+                                <li>Cross-domain Affective Transfer Learning</li>
+                                <li>Emotion-aware Visual Question Answering</li>
+                                <li>Emotion-guided Text-to-Image/Video Generation</li>
+                                <li>Multimodal Empathetic Dialogue Systems</li>
+                                <li>Persona-driven Emotion-aware Conversational AI</li>
+                            </ul>
+                        </div>
 
-                    <p><strong>3) Cognition-oriented Multimodal Affective Computing</strong></p>
-                    <ul class="research-areas">
-                        <li>Multimodal Implicit Sentiment Analysis</li>
-                        <li>Multimodal Emotion Cause Analysis in Conversations</li>
-                        <li>Multimodal Aspect-based Sentiment Analysis</li>
-                        <li>Neuro-symbolic Reasoning for Emotion Understanding</li>
-                        <li>Theory of Mind-based Empathy Modeling</li>
-                        <li>Cognitive Load and Affect Interaction Modeling</li>
-                        <li>Cross-modal Cognitive Bias Detection</li>
-                    </ul>
+                        <div class="research-area-column">
+                            <p><strong>3) Cognition-oriented Multimodal Affective Computing</strong></p>
+                            <ul class="research-areas">
+                                <li>Multimodal Implicit Sentiment Analysis</li>
+                                <li>Multimodal Emotion Cause Analysis in Conversations</li>
+                                <li>Multimodal Aspect-based Sentiment Analysis</li>
+                                <li>Neuro-symbolic Reasoning for Emotion Understanding</li>
+                                <li>Theory of Mind-based Empathy Modeling</li>
+                                <li>Cognitive Load and Affect Interaction Modeling</li>
+                                <li>Cross-modal Cognitive Bias Detection</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <style>
+                        .research-areas-container {
+                            display: flex;
+                            justify-content: space-between;
+                            gap: 20px;
+                            margin: 20px 0;
+                            width: 100%;
+                        }
+                        
+                        .research-area-column {
+                            flex: 1;
+                            min-width: 0;
+                            background: rgba(255, 255, 255, 0.05);
+                            padding: 20px;
+                            border-radius: 10px;
+                            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                        }
+                        
+                        .research-area-column strong {
+                            display: block;
+                            margin-bottom: 15px;
+                            color: var(--accent-color, #007bff);
+                            font-size: 1.1em;
+                            word-wrap: break-word;
+                        }
+                        
+                        .research-areas {
+                            list-style-type: none;
+                            padding-left: 0;
+                            margin: 0;
+                        }
+                        
+                        .research-areas li {
+                            margin-bottom: 10px;
+                            padding-left: 20px;
+                            position: relative;
+                            word-wrap: break-word;
+                        }
+                        
+                        .research-areas li:before {
+                            content: "•";
+                            position: absolute;
+                            left: 0;
+                            color: var(--accent-color, #007bff);
+                        }
+                        
+                        @media (max-width: 768px) {
+                            .research-areas-container {
+                                flex-direction: column;
+                            }
+                            
+                            .research-area-column {
+                                margin-bottom: 20px;
+                                width: 100%;
+                            }
+                        }
+                    </style>
                 </div>
             </div>
         </section>
@@ -161,23 +351,27 @@
                 <div class="timeline">
                     <div class="timeline-item">
                         <h3>Workshop Date</h3>
-                        <p class="date" data-date="2025-10-27">October 27-28, 2025</p>
+                        <p class="date" data-date="2025-10-28T23:59:00-1200">October 27-28, 2025 (AoE)</p>
                     </div>
                     <div class="timeline-item">
                         <h3>Camera Ready</h3>
-                        <p class="date" data-date="2025-08-03">August 3, 2025</p>
+                        <p class="date" data-date="2025-08-23T23:59:00-1200">August 23, 2025 (AoE)</p>
                     </div>
                     <div class="timeline-item">
                         <h3>Paper Notification</h3>
-                        <p class="date" data-date="2025-07-24">July 24, 2025</p>
+                        <p class="date" data-date="2025-07-20T23:59:00-1200">July 20, 2025 (AoE)</p>
                     </div>
                     <div class="timeline-item">
                         <h3>Paper Submission Deadline</h3>
-                        <p class="date" data-date="2025-06-13">June 13, 2025</p>
+                        <p class="date" data-date="2025-06-30T23:59:00-1200">June 30, 2025 (AoE)</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Paper Submission Start</h3>
+                        <p class="date" data-date="2025-04-15T23:59:00-1200">April 15, 2025 (AoE)</p>
                     </div>
                     <div class="timeline-item">
                         <h3>Website Preparation</h3>
-                        <p class="date" data-date="2025-03-30">March 30, 2025</p>
+                        <p class="date" data-date="2025-03-30T23:59:00-1200">March 30, 2025 (AoE)</p>
                     </div>
                 </div>
             </div>
@@ -190,10 +384,19 @@
                 <div class="about-content">
                     <p>All submissions must be written in English and follow the current ACM two-column conference format. Page limits are inclusive of all content, including figures and appendices. Submissions must be anonymized by the authors for review.</p>
                     
-                    <p>Authors should use the appropriate ACM templates: the "sigconf" LaTeX template or the Interim Word Template, both available on the <a href="https://www.acm.org/publications/proceedings-template" target="_blank">ACM Proceedings Template page</a>. Alternatively, authors can prepare their submissions using <a href="https://www.overleaf.com/gallery/tagged/acm-official#.WOuOk2e1taQ" target="_blank">Overleaf's official ACM templates</a>.</p>
+                    <p>Authors should use the appropriate ACM templates: the "sigconf" LaTeX template or the Interim Word Template, both available on the <a href="https://www.acm.org/publications/proceedings-template" target="_blank" class="theme-link">ACM Proceedings Template page</a>. Alternatively, authors can prepare their submissions using <a href="https://www.overleaf.com/gallery/tagged/acm-official#.WOuOk2e1taQ" target="_blank" class="theme-link">Overleaf's official ACM templates</a>.</p>
+
+                    <!-- <p>For submission and review of manuscript of latex format, you could use the following documentclass command:  -->
+                    <!-- <em>\documentclass[sigconf, screen, review, anonymous]{acmart}</em></p> -->
+                     <!-- <p>Use <code>\documentclass[sigconf, screen, review, anonymous]{acmart}</code> to prepare your LaTeX manuscript for submission and review.</p> -->
+                     <!-- <p>To prepare your manuscript in LaTeX format for submission and review, please use the following document class: <em>\documentclass[sigconf, screen, review, anonymous]{acmart}</em>.</p> -->
+                     <p>Please use <em>\documentclass[sigconf, screen, review, anonymous]{acmart}</em> when preparing your LaTeX manuscript for submission and review.</p>
+
+
+
                     
                     <div class="submission-button-container">
-                        <a href="https://openreview.net/group?id=acmmm.org/ACMMM/2025/Workshop/cogmeac" class="submission-button" target="_blank">
+                        <a href="https://openreview.net/group?id=acmmm.org/ACMMM/2025/Workshop/CogMAEC" class="submission-button" target="_blank">
                             <i class="fas fa-paper-plane"></i>
                             Submission Site
                         </a>
@@ -277,7 +480,7 @@
                 <div class="about-content">
                     <p>For any questions about the workshop, please contact us through:</p>
                     <div class="contact-info">
-                        <p><strong>Email:</strong> cogmaec@googlegroups.com</p>
+                        <p><strong>Email:</strong> <button onclick="showEmail()" class="email-btn" id="emailBtn">Show Email</button><span id="emailText" class="email-text"></span></p>
                         <p><strong>Google Group:</strong> <a href="https://groups.google.com/g/cogmaec" target="_blank">https://groups.google.com/g/cogmaec</a></p>
                     </div>
                 </div>
@@ -301,6 +504,7 @@
             
             dates.forEach(dateElement => {
                 const dateStr = dateElement.getAttribute('data-date');
+                // 直接使用完整的ISO 8601格式的日期字符串
                 const date = new Date(dateStr);
                 
                 if (now > date) {
@@ -311,6 +515,9 @@
 
         // 页面加载时检查日期
         document.addEventListener('DOMContentLoaded', checkDates);
+        
+        // 每分钟更新一次日期状态
+        setInterval(checkDates, 60000);
 
         // 汉堡菜单功能
         document.querySelector('.hamburger-menu').addEventListener('click', function() {
@@ -376,6 +583,15 @@
                 }
             });
         });
+
+        function showEmail() {
+            const btn = document.getElementById('emailBtn');
+            const emailText = document.getElementById('emailText');
+            const parts = ['cogmaec', '@', 'googlegroups.com'];
+            emailText.textContent = parts.join('');
+            emailText.classList.add('revealed');
+            btn.style.display = 'none';
+        }
     </script>
 </body>
 </html> 
