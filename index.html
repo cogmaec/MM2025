@@ -184,9 +184,188 @@
 
         .speaker .institution {
             color: #666;
-            font-size: 1.1em;
+            font-size: 1.2em;
             margin: 0;
         }
+
+        .schedule-section,
+        .papers-section {
+            padding: 60px 0;
+        }
+
+        .schedule-section .schedule-intro {
+            margin-bottom: 24px;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .schedule-section .schedule-text {
+            margin-bottom: 12px;
+        }
+
+        .schedule-section .schedule-meta {
+            margin-top: 12px;
+            font-weight: 600;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        .schedule-section .schedule-map-link {
+            color: var(--theme-color);
+            text-decoration: none;
+        }
+
+        .schedule-section .schedule-map-link:hover {
+            text-decoration: underline;
+        }
+
+        .schedule-section .schedule-table-wrapper {
+            overflow-x: auto;
+            margin: 24px auto 0;
+            width: 100%;
+            max-width: none;
+        }
+
+        .schedule-section table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            border-radius: 12px;
+        }
+
+        .schedule-section th,
+        .schedule-section td {
+            padding: 12px 18px;
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            vertical-align: middle;
+            line-height: 1.4;
+        }
+
+        .schedule-section th:nth-child(1),
+        .schedule-section td:nth-child(1) {
+            width: 20%;
+        }
+
+        .schedule-section th:nth-child(2),
+        .schedule-section td:nth-child(2) {
+            width: 48%;
+        }
+
+        .schedule-section th:nth-child(3),
+        .schedule-section td:nth-child(3) {
+            width: 32%;
+        }
+
+        .schedule-section thead {
+            background-color: #f0f2f6;
+        }
+
+        .schedule-section th {
+            font-weight: 700;
+            color: #1f1f1f;
+            letter-spacing: 0.02em;
+        }
+
+        .schedule-section .schedule-subhead th {
+            background-color: #ffffff;
+            font-size: 0.95em;
+            font-weight: 600;
+            color: #2c3e50;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .schedule-section tbody tr:nth-child(even) {
+            background-color: rgba(245, 247, 250, 0.6);
+        }
+
+        .schedule-section .schedule-break td {
+            text-align: center;
+            background: #ffffff;
+            font-weight: 400;
+            font-size: 0.95em;
+            padding: 12px 18px;
+        }
+
+        .schedule-section .time-slot {
+            font-weight: 700;
+            color: #1f1f1f;
+            white-space: nowrap;
+        }
+
+        .schedule-section .session-title {
+            font-weight: 600;
+            color: #222;
+        }
+
+        .schedule-section .session-title.keynote {
+            color: #1abc9c;
+        }
+
+        .schedule-section .session-title.oral {
+            color: #f39c12;
+        }
+
+        .schedule-section .session-title.break {
+            color: #7e8a97;
+            font-style: italic;
+        }
+
+        .schedule-section .session-codes {
+            font-size: 0.95em;
+            color: #666;
+        }
+
+        .schedule-section .presenter {
+            color: #333;
+        }
+
+        .schedule-section .presenter-affiliation {
+            color: #555;
+            font-size: 0.9em;
+        }
+
+        .schedule-section .note {
+            font-style: italic;
+            color: #666;
+            margin-top: 12px;
+        }
+
+        .papers-table-wrapper {
+            margin: 28px auto 0;
+            width: 100%;
+            max-width: none;
+        }
+
+        .papers-section table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .papers-section th,
+        .papers-section td {
+            padding: 6px 14px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            text-align: left;
+        }
+
+        .papers-section tbody tr:nth-child(even) {
+            background-color: rgba(245, 247, 250, 0.6);
+        }
+
+        .papers-section tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .papers-section .paper-title {
+            font-weight: 700;
+        }
+
 
         @media (max-width: 768px) {
             .speakers {
@@ -197,6 +376,38 @@
             
             .speaker {
                 max-width: 100%;
+            }
+
+            .schedule-section th,
+            .schedule-section td {
+                padding: 10px 14px;
+            }
+
+            .schedule-section table {
+                font-size: 0.95em;
+            }
+
+            .schedule-section .schedule-meta {
+                font-size: 0.95em;
+            }
+
+            .schedule-section .schedule-table-wrapper,
+            .papers-table-wrapper {
+                width: 100%;
+                max-width: none;
+            }
+
+            .papers-section table {
+                font-size: 0.95em;
+            }
+
+            .schedule-section th:nth-child(1),
+            .schedule-section td:nth-child(1),
+            .schedule-section th:nth-child(2),
+            .schedule-section td:nth-child(2),
+            .schedule-section th:nth-child(3),
+            .schedule-section td:nth-child(3) {
+                width: auto;
             }
         }
     </style>
@@ -217,6 +428,8 @@
                 </div>
                 <div class="nav-items">
                     <a href="#about">About</a>
+                    <a href="#schedule">Schedule</a>
+                    <a href="#accepted-papers">Accepted Papers</a>
                     <a href="#call-for-paper">Call for Papers</a>
                     <a href="#timeline">Timeline</a>
                     <a href="#submission">Submission</a>
@@ -272,7 +485,161 @@
             </div>
         </section>
 
-        
+        <section id="schedule" class="schedule-section">
+            <div class="container">
+                <h2>Schedule</h2>
+                <div class="schedule-intro">
+                    <p class="schedule-text">CogMAEC'25, co-organized with the MuSe workshop, runs in a hybrid format so that onsite and remote participants can engage together. The afternoon program combines invited keynotes with oral and poster presentations to spotlight cognition-oriented affective computing.</p>
+                    <p class="schedule-meta">Monday, 27 October · 13:30&ndash;17:00 · Dublin Royal Convention Centre (<a href="https://www.google.com/maps/place/Dublin+Royal+Convention+Centre/@53.1607058,-6.7601398,8.59z/data=!4m6!3m5!1s0x48670d3bad4ddb5b:0x2d2ef37a3d00c938!8m2!3d53.3419947!4d-6.2683773!16s%2Fg%2F11hdz9rpy6?entry=ttu&amp;g_ep=EgoyMDI1MTAxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="schedule-map-link">Google Maps</a>) · Royal CC · Higgins&nbsp;2</p>
+                </div>
+                <div class="schedule-table-wrapper">
+                    <table class="schedule-table">
+                        <colgroup>
+                            <col style="width: 12%;">
+                            <col style="width: 64%;">
+                            <col style="width: 24%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Session (All times are in Dublin, Winter Time, UTC+0)</th>
+                                <th>Presenter</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="time-slot">13:30&ndash;14:15</td>
+                                <td>
+                                    <div class="session-title keynote">Keynote Talk I <span class="session-codes">[TBD]</span></div>
+                                </td>
+                                <td class="presenter">Prof. Minlie Huang<br><span class="presenter-affiliation">Tsinghua University</span></td>
+                            </tr>
+                            <tr>
+                                <td class="time-slot">14:15&ndash;15:00</td>
+                                <td>
+                                    <div class="session-title keynote">Keynote Talk II <span class="session-codes">[TBD]</span></div>
+                                </td>
+                                <td class="presenter">Prof. Soujanya Poria<br><span class="presenter-affiliation">Nanyang Technological University</span></td>
+                            </tr>
+                            <tr class="schedule-break">
+                                <td colspan="3">
+                                    Coffee Break &amp; Poster Session
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="time-slot">15:30&ndash;16:15</td>
+                                <td>
+                                    <div class="session-title keynote">Keynote Talk III <span class="session-codes">[TBD]</span></div>
+                                </td>
+                                <td class="presenter">Dr. Amir Zadeh<br><span class="presenter-affiliation">Lambda</span></td>
+                            </tr>
+                            <tr>
+                                <td class="time-slot">16:15&ndash;16:30</td>
+                                <td>
+                                    <div class="session-title oral">Oral I: Unveiling Genuine Emotions: Integrating Micro-Expressions and Physiological Signals for Enhanced Emotion Recognition</div>
+                                </td>
+                                <td class="presenter">Chunag Ma</td>
+                            </tr>
+                            <tr>
+                                <td class="time-slot">16:30&ndash;16:45</td>
+                                <td>
+                                    <div class="session-title oral">Oral II: Revisiting Your Memory: Reconstruction of Affect-Contextualized Memory via EEG-guided Audiovisual Generation</div>
+                                </td>
+                                <td class="presenter">Joonwoo Kwon</td>
+                            </tr>
+                            <tr>
+                                <td class="time-slot">16:45&ndash;17:00</td>
+                                <td>
+                                    <div class="session-title oral">Oral III: Leveraging Concept Annotations for Trustworthy Multimodal Video Interpretation through Modality Specialization</div>
+                                </td>
+                                <td class="presenter">Elisa Ancarani</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="accepted-papers" class="papers-section">
+            <div class="container">
+                <h2>Accepted Papers</h2>
+                <div class="papers-table-wrapper">
+                    <table class="papers-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Title</th>
+                                <th>Authors</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1.</td>
+                                <td class="paper-title">PetChat: An Emotion-Aware Pet Communication System Powered by LLMs and Wearable Devices</td>
+                                <td>Ziqiao Zhu, Jiachun Du, Kejun Zhang, Jingyuan Li</td>
+                            </tr>
+                            <tr>
+                                <td>2.</td>
+                                <td class="paper-title">Disentangled Representation Learning via Transformer with Graph Attention Fusion for Depression Detection</td>
+                                <td>Luntian Mou, Siqi Zhen, Shasha Mao, Nan Ma</td>
+                            </tr>
+                            <tr>
+                                <td>3.</td>
+                                <td class="paper-title">MemeCMD: An Automatically Generated Chinese Multi-turn Dialogue Dataset with Contextually Retrieved Memes</td>
+                                <td>Pufeng Huang, Xianhe Tang, Yuheng Wang</td>
+                            </tr>
+                            <tr>
+                                <td>4.</td>
+                                <td class="paper-title">Commanding the Debate Stage: Multimodal Emotion Analysis of Trump's Storytelling Strategies in the 2016 Presidential Debates</td>
+                                <td>Xiuchuan Ding</td>
+                            </tr>
+                            <tr>
+                                <td>5.</td>
+                                <td class="paper-title">Emotion Understanding under Naturalistic Stimuli via Neural Encoding and Decoding</td>
+                                <td>Guandong Pan, Shaoting Tang, Zhiming Zheng, Yang Yangqian, Xin Wang, Liu Longzhao, Shi Chen</td>
+                            </tr>
+                            <tr>
+                                <td>6.</td>
+                                <td class="paper-title">Talk to Me, Like Me: Modular Personalization of Emotional AI via Behavioral Metadata, Fine-Tuning, RAG, Prompts, and Agentic Reasoning</td>
+                                <td>Om Dabral, Jaspreet Singh, Hardik Sharma, Bagesh Kumar</td>
+                            </tr>
+                            <tr>
+                                <td>7.</td>
+                                <td class="paper-title">Multimodal Trait and Emotion Recognition via Agentic AI: An End-to-End Pipeline</td>
+                                <td>Om Dabral, Swayam Bansal, Mridul Maheshwari, Hardik Sharma, Jaspreet Singh, Bagesh Kumar</td>
+                            </tr>
+                            <tr>
+                                <td>8.</td>
+                                <td class="paper-title">Revisiting Your Memory: Reconstruction of Affect-Contextualized Memory via EEG-guided Audiovisual Generation</td>
+                                <td>Joonwoo Kwon, Heehwan Wang, Jinwoo Lee, Sooyoung Kim, Shinjae Yoo, Yuewei Lin, Jiook Cha</td>
+                            </tr>
+                            <tr>
+                                <td>9.</td>
+                                <td class="paper-title">Fine-grained Structured Multimodal Textural Representation for Natural Human-Computer Conversation</td>
+                                <td>Yansong Liu, Yuxin Lin, Yinglin Zheng, Wangzheng Shi, Mingyi Xu, Yuhang Lin, Xinqi Cai, Dong Chen, Ming Zeng</td>
+                            </tr>
+                            <tr>
+                                <td>10.</td>
+                                <td class="paper-title">Leveraging Concept Annotations for Trustworthy Multimodal Video Interpretation through Modality Specialization</td>
+                                <td>Elisa Ancarani, Julie Tores, Rémy Sun, Lucile Sassatelli, Hui-Yin Wu, Frederic Precioso</td>
+                            </tr>
+                            <tr>
+                                <td>11.</td>
+                                <td class="paper-title">Unveiling Genuine Emotions: Integrating Micro-Expressions and Physiological Signals for Enhanced Emotion Recognition</td>
+                                <td>Chuang Ma</td>
+                            </tr>
+                            <tr>
+                                <td>12.</td>
+                                <td class="paper-title">A Transformer-Based Multimodal Framework for Hidden Emotion Recognition through Micro-Expression and EEG Fusion</td>
+                                <td>Chuang Ma</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
 
         <section id="call-for-paper">
             <div class="container">
@@ -480,18 +847,18 @@
                 </div>
                 <div class="speakers">
                     <div class="speaker">
-                        <img src="assets/mlhuang.jpg" alt="Minlie Huang">
-                        <h3><a href="https://coai.cs.tsinghua.edu.cn/hml" target="_blank">Minlie Huang</a></h3>
+                        <img src="assets/mlhuang.jpg" alt="Prof. Minlie Huang">
+                        <h3><a href="https://coai.cs.tsinghua.edu.cn/hml" target="_blank">Prof. Minlie Huang</a></h3>
                         <p class="institution">Tsinghua University</p>
                     </div>
                     <div class="speaker">
-                        <img src="assets/poria.png" alt="Soujanya Poria">
-                        <h3><a href="https://soujanyaporia.github.io/" target="_blank">Soujanya Poria</a></h3>
+                        <img src="assets/poria.png" alt="Prof. Soujanya Poria">
+                        <h3><a href="https://soujanyaporia.github.io/" target="_blank">Prof. Soujanya Poria</a></h3>
                         <p class="institution">Nanyang Technological University</p>
                     </div>
                     <div class="speaker">
-                        <img class="compact" src="assets/amir.jpeg" alt="Amir Zadeh">
-                        <h3><a href="https://scholar.google.com/citations?user=MQFngiMAAAAJ" target="_blank">Amir Zadeh</a></h3>
+                        <img class="compact" src="assets/amir.jpeg" alt="Dr. Amir Zadeh">
+                        <h3><a href="https://scholar.google.com/citations?user=MQFngiMAAAAJ" target="_blank">Dr. Amir Zadeh</a></h3>
                         <p class="institution">Lambda</p>
                     </div>
                 </div>
