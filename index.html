@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diffusion beats autoregressive in data-constrained settings.</title>
+    <title>CogMAEC Workshop</title>
     <link rel="icon" type="image/x-icon" href="assets/logo.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -294,17 +294,65 @@
             white-space: nowrap;
         }
 
-        .schedule-section .session-title {
+        .schedule-section .session-title,
+        .schedule-section .session-toggle {
             font-weight: 600;
             color: #222;
         }
 
-        .schedule-section .session-title.keynote {
+        .schedule-section .session-title.keynote .session-highlight,
+        .schedule-section .session-toggle.keynote .session-highlight {
             color: #1abc9c;
         }
 
-        .schedule-section .session-title.oral {
+        .schedule-section .session-title.oral .session-highlight,
+        .schedule-section .session-toggle.oral .session-highlight {
             color: #f39c12;
+        }
+
+        .schedule-section .session-toggle {
+            margin: 0;
+        }
+
+        .schedule-section .session-toggle summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: inherit;
+            outline: none;
+            line-height: 1.45;
+        }
+
+        .schedule-section .session-toggle summary::-webkit-details-marker {
+            color: var(--theme-color);
+        }
+
+        .schedule-section .session-toggle summary:focus-visible {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 4px;
+        }
+
+        .schedule-section .session-toggle[open] summary {
+            color: #1f1f1f;
+        }
+
+        .schedule-section .session-toggle .session-toggle-content {
+            margin-top: 10px;
+            padding: 12px 16px;
+            background: rgba(232, 241, 255, 0.6);
+            border-left: 3px solid #1abc9c;
+            border-radius: 6px;
+            color: #3a3a3a;
+            line-height: 1.6;
+            font-size: 0.95em;
+            font-weight: 400;
+            text-align: justify;
+            text-align-last: left;
+        }
+
+        .schedule-section .session-toggle .session-toggle-content p {
+            text-align: justify;
+            text-align-last: left;
+            margin: 0;
         }
 
         .schedule-section .session-title.break {
@@ -510,14 +558,14 @@
                             <tr>
                                 <td class="time-slot">13:30&ndash;14:15</td>
                                 <td>
-                                    <div class="session-title keynote">Keynote Talk I <span class="session-codes">[TBD]</span></div>
+                                    <div class="session-title keynote">Keynote Talk I: <span class="session-highlight">[TBD]</span></div>
                                 </td>
                                 <td class="presenter">Prof. Minlie Huang<br><span class="presenter-affiliation">Tsinghua University</span></td>
                             </tr>
                             <tr>
                                 <td class="time-slot">14:15&ndash;15:00</td>
                                 <td>
-                                    <div class="session-title keynote">Keynote Talk II <span class="session-codes">[TBD]</span></div>
+                                    <div class="session-title keynote">Keynote Talk II: <span class="session-highlight">[TBD]</span></div>
                                 </td>
                                 <td class="presenter">Prof. Soujanya Poria<br><span class="presenter-affiliation">Nanyang Technological University</span></td>
                             </tr>
@@ -529,28 +577,33 @@
                             <tr>
                                 <td class="time-slot">15:30&ndash;16:15</td>
                                 <td>
-                                    <div class="session-title keynote">Keynote Talk III <span class="session-codes">[TBD]</span></div>
+                                    <details class="session-toggle keynote">
+                                        <summary>Keynote Talk III: <span class="session-highlight">Diffusion beats autoregressive in data-constrained settings.</span></summary>
+                                        <div class="session-toggle-content">
+                                            <p><b>Abstract:</b> Autoregressive (AR) models have long dominated the landscape of large language models, driving progress across a wide range of tasks. Recently, diffusion-based language models have emerged as a promising alternative, though their advantages over AR models remain underexplored. In this paper, we systematically study masked diffusion models in data-constrained settings—where training involves repeated passes over limited data—and find that they significantly outperform AR models when compute is abundant but data is scarce. Diffusion models make better use of repeated data, achieving lower validation loss and superior downstream performance. We find new scaling laws for diffusion models and derive a closedform expression for the critical compute threshold at which diffusion begins to outperform AR. Finally, we explain why diffusion models excel in this regime: their randomized masking objective implicitly trains over a rich distribution of token orderings, acting as an implicit data augmentation that AR’s fixed left-toright factorization lacks. Our results suggest that when data, not compute, is the bottleneck, diffusion models offer a compelling alternative to the standard AR paradigm.</p>
+                                        </div>
+                                    </details>
                                 </td>
                                 <td class="presenter">Dr. Amir Zadeh<br><span class="presenter-affiliation">Lambda</span></td>
                             </tr>
                             <tr>
                                 <td class="time-slot">16:15&ndash;16:30</td>
                                 <td>
-                                    <div class="session-title oral">Oral I: Unveiling Genuine Emotions: Integrating Micro-Expressions and Physiological Signals for Enhanced Emotion Recognition</div>
+                                    <div class="session-title oral">Oral I: <span class="session-highlight">Unveiling Genuine Emotions: Integrating Micro-Expressions and Physiological Signals for Enhanced Emotion Recognition</span></div>
                                 </td>
                                 <td class="presenter">Chuang Ma</td>
                             </tr>
                             <tr>
                                 <td class="time-slot">16:30&ndash;16:45</td>
                                 <td>
-                                    <div class="session-title oral">Oral II: Revisiting Your Memory: Reconstruction of Affect-Contextualized Memory via EEG-guided Audiovisual Generation</div>
+                                    <div class="session-title oral">Oral II: <span class="session-highlight">Revisiting Your Memory: Reconstruction of Affect-Contextualized Memory via EEG-guided Audiovisual Generation</span></div>
                                 </td>
                                 <td class="presenter">Joonwoo Kwon</td>
                             </tr>
                             <tr>
                                 <td class="time-slot">16:45&ndash;17:00</td>
                                 <td>
-                                    <div class="session-title oral">Oral III: Leveraging Concept Annotations for Trustworthy Multimodal Video Interpretation through Modality Specialization</div>
+                                    <div class="session-title oral">Oral III: <span class="session-highlight">Leveraging Concept Annotations for Trustworthy Multimodal Video Interpretation through Modality Specialization</span></div>
                                 </td>
                                 <td class="presenter">Elisa Ancarani</td>
                             </tr>
